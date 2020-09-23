@@ -12,20 +12,20 @@ namespace AppSample.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private Person _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<Person> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<Person> ItemTapped { get; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Person>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<Person>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -59,7 +59,7 @@ namespace AppSample.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public Person SelectedItem
         {
             get => _selectedItem;
             set
@@ -74,13 +74,13 @@ namespace AppSample.ViewModels
             await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(Person item)
         {
             if (item == null)
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item._id}");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace AppSample
         {
             InitializeComponent();
 
-            DependencyService.Register<MockItemDataStore>();
+            DependencyService.Register<ApiPeopleDataStore>();
             MainPage = new AppShell();
         }
 

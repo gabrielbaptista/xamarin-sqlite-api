@@ -11,7 +11,7 @@ namespace AppSample.Views
 {
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Person Item { get; set; }
 
         public NewItemPage()
         {

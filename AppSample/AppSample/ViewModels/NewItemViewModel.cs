@@ -49,10 +49,10 @@ namespace AppSample.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            Person newItem = new Person()
             {
-                Id = Guid.NewGuid().ToString(),
-                Text = Text,
+                _id = Guid.NewGuid().ToString(),
+                personName = Text,
                 Description = Description
             };
 
