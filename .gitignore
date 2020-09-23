@@ -3,3 +3,8 @@
 ################################################################################
 
 /AppSample/AppSample/bin/Debug/netstandard2.0
+/AppSample/AppSample/obj
+/AppSample/AppSample.Android/bin/Debug
+/AppSample/AppSample.Android/obj
+/AppSample/AppSample.iOS/bin/iPhone/Debug
+/AppSample/AppSample.iOS/obj
